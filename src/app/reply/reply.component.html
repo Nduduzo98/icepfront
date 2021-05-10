@@ -1,0 +1,19 @@
+<form [formGroup]="editreply" (ngSubmit)=" updateStatus()">
+    <h1 style="text-align: center;"> Application Form</h1>
+    <div class="container">
+       
+       
+        <mat-form-field>
+            <input matInput placeholder="Reply" formControlName="status">
+            <!-- <mat-hint *ngIf="signupForm.controls.email.errors">Email is required</mat-hint> -->
+        </mat-form-field>
+
+        
+        
+        
+       
+    </div>
+    <div class="btnb">
+        <button mat-flat-button color="primary"  type="submit">send</button>
+    </div>
+</form>
