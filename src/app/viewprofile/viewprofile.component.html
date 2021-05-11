@@ -1,188 +1,44 @@
-
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    </head>
-  
-    
-   <style>
-   *{
-       margin: 0;
-       padding: 0;
-       box-sizing: border-box;
-       font-family:'Poppins',sans-serif;
-   }
-   body{
-       min-height: 100vh;
-       margin: -10;
-    padding: -10;
-   
-    font-family: sans-serif;
-    background-size: cover;
-    background-position: center;
-   } 
-   .navigation{
-       position: fixed;
-       width: 60px;
-       height: 100%;
-       background:#0a4b9f8f ;
-       transition: 0.5s;
-       overflow: hidden;
-   }
-   .navigation:hover {
-       width: 200px;
-   }  
-   .navigation ul {
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-   }
-   .navigation ul li {
-       position: relative;
-       width: 100%;
-       list-style: none;
-   }
-   .navigation ul li:hover{
-       background: #d51313;
-   }
-   .navigation ul li a {
-       position: relative;
-       display: block;
-       width:100%;
-       display: flex;
-       text-decoration: none;
-       color: rgb(255, 255, 255);
-   }
-   .navigation ul li a .icon{
-       position: relative;
-       display: block;
-       min-width: 60px;
-       height: 60px;
-       line-height: 60px;
-       text-align: center;
-   }
-   .navigation ul li a .icon .fa{
-       font-size: 24px;
-   }
-   .navigation ul li a .title{
-       position: relative;
-       display: block;
-        padding: 0 0px;
-       height: 60px;
-       line-height: 60px;
-       text-align: start;
-       white-space: nowrap;
-   }
-   img
-{
-    width:100px ;
-}
-.logoI
-{
-    background-color: rgb(255, 255, 255);
-}
-   .regform
-{
-
-    width: 900px;
-    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-    background:#0a4b9f71;
-    padding: 0px;
-    margin: 2% auto 0;
-    text-align: center;
-}
-h1{
-    color: white;
-}
-button{
-
-    color: white;
-    width:100px;
-    padding:10px;
-    border-radius:20px ;
-    font-size: 15px;
-    margin: 10px 0;
-    border:none;
-    outline:none;
-    cursor: pointer;
-}
-.btn{
-   background-color:#d51313 ;
-}
-.btn:hover{
-   background-color:rgba(255, 255, 255, 0.144);
-   
-}
-h2{
-    color: white;
-}
-.logoI
-{
-
-    background-color: rgba(255, 255, 255, 0.568);
-}
-th{
-    color: white;
-}
-td{
-    color:rgb(255, 255, 255)
-}
-td i {
-    color: blue;
-}
-
-
-   </style>
-    <title>Dashboard</title>
-
-<body background="back.jpg">
-    <div class="navigation">
-        <ul>
-            <li>
-                <a [routerLink]="'/admin'">
-                    <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
-                    <span class="title">Home</span>
-                </a>
-            </li>
-            <li>
-                <a [routerLink]="'/viewprofile'">
-                    <span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                    <span class="title">View Profiles</span>
-                </a>
-            </li>
-            <li>
-                <a [routerLink]="'/viewapplication'">
-                    <span class="icon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
-                    <span class="title">View Application</span>
-                </a>
-            </li>
-            <li>
-                <a [routerLink]="'/post'">
-                    <span class="icon"><i class="fa fa-share-square-o" aria-hidden="true"></i></span>
-                    <span class="title">Post vacancies</span>
-                </a>
-            </li>
-            <li>
-                <a href="index.html">
-                    <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
-                    <span class="title">Sign out</span>
-                </a>
-            </li>
-
-
-        </ul>
-    </div>
-    <section class="overlay">
-        <div class="regform">
-            <div class="logoI"><img src="assets\pictures\ICEP-Logo.png"></div>
+<mat-card-header>
+    <mat-toolbar class="toolbar">
+        <mat-card-title style="color: blue;">Profile List</mat-card-title>
+        <span class="toolbar-spacer"></span>
+        <mat-icon>Cancel</mat-icon>
+    </mat-toolbar> 
+</mat-card-header>
+<mat-card-content>
+    <table >
+        <thead style="background-color: rgba(223, 223, 223, 0.479);">
+            <tr>
+              <th scope="col">Firstname</th>
+              <th scope="col">Lastname</th>
+              <th scope="col">Email</th>
+              <th scope="col">Operations</th>
+            </tr>
+          </thead>
+          <tbody style="background-color: rgba(216, 29, 29, 0.534)" >
+            <tr *ngFor="let prof of profiles">
+              
+              <td>{{prof.firstName}}</td>
+              <td>{{prof.lastNname}}</td>
+              <td>{{prof.email}}</td>
+              <!-- <td><button (click) = "deleteProfile(prof.id);" class="btn btn-danger" type="button" [routerLink]="'/view-profiles'">DELETE</button></td> -->
+              <!-- <td> <a (click) = "deleteProf(prof.id)"><span class="icon"><i class="fa fa-trash" aria-hidden="true" ></i></span></a></td> -->
+                
         
-            <h1>View Profile</h1>
+           
+  
+            </tr>
+           
+          </tbody>
+      </table>
       
+</mat-card-content>
+<!--       
             <form name="userform">
 
                 <div class="form-group">
                  
-                         <!-- <table >
+                          <table >
                             <thead style="background-color: rgba(223, 223, 223, 0.479);">
                                 <tr>
                                   <th scope="col">Firstname</th>
@@ -208,7 +64,7 @@ td i {
                               </tbody>
                            
                              
-                         </table> -->
+                         </table> 
                          
                          
                          <hr>
@@ -216,23 +72,10 @@ td i {
                 </div>
                
          </form>
-         
+          -->
             
             
 
            
             
         
-            
-
-            <hr>
-           <p> &copy; all rights reserved</p>
-
-           
-
-           
-
-
-        </div> 
-    </section>
-</body>

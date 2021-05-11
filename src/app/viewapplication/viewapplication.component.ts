@@ -15,5 +15,12 @@ export class ViewapplicationComponent implements OnInit {
   getApplications(){
     this.auth.getApplication().subscribe((data:any) => this.applicationss=data)
   }
+  deleteApp(id:any){
+    this.auth.deleteApp(id).subscribe(data =>{
+
+    })
+    location.reload();
+  }
+
 
 }

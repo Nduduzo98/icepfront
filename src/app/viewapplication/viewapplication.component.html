@@ -204,9 +204,8 @@ td i {
                                   <td>{{application.email}}</td>
                                   <td>{{application.mobileno}}</td>
                                   <td>{{application.specialization}}</td>
-                                  <td> <a routerLink ="/reply/{{application.applicationId}}"><span class="icon"><i class="fa fa-trash" aria-hidden="true" ></i></span></a></td>
-                                  <!-- <td><button (click) = "updateReply(application.studentno)" class="btn btn-danger" type="button" >Update</button></td>
-                                <td><button (click) = "deleteApp(application.studentno); reloadpage()" class="btn btn-danger" type="button" [routerLink]="'/view-applications'">DELETE RECORD</button></td> -->
+                                  <td> <a routerLink ="/reply/{{application.applicationId}}"><span class="icon"><i class="fa fa-edit" aria-hidden="true" ></i></span></a></td>
+                                  <td> <a (click) = "deleteApp(application.applicationId)"><span class="icon"><i class="fa fa-trash" aria-hidden="true" ></i></span></a></td>
                                   
                                     
                             

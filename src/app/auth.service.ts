@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map, tap} from 'rxjs/operators';
+//exports
 export interface LoginForm{
   email:string;
   password: string
@@ -17,6 +18,14 @@ export interface postForm{
   vacancyDesc?:string;
   closingDate?:Date;
 }
+export interface applyForm{
+  firstName?:string;
+  lastName?:string;
+  email?:string;
+  studentno?:any;
+  specialization?:string;
+  mobileno?:string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -31,12 +40,17 @@ export class AuthService {
   getCurrentData(id:number){
     return this.http.get<any>(this.deletePosturl+'/'+id)
   }
-  sendReply(data:any){
+  //applicant functions
+  apply(data:any){
     return this.http.post<any>(this.url,data).pipe(
       map(data => data)
     )
   }
-  //applicant functions
+  login(data:any){
+    return this.http.post<any>(this.url,data).pipe(
+      map(data=>data)
+    )
+  }  
   signUp(data:any){
     return this.http.post<any>(this.url,data).pipe(
       map(data=>data)
@@ -58,9 +72,18 @@ export class AuthService {
   getApplication(){
     return this.http.get<any>(this.getapplicationUrl)
   }
+  deleteApp(id:number){
+    return this.http.delete<any>(this.deletePosturl+'/'+id)
+  }
   updateStatus(id:number,data:any){
     return this.http.put(this.deletePosturl+'/'+id,data)
 
+  }
+  getProfiles(){
+    return this.http.get<any>(this.getapplicationUrl)
+  }
+  deleteProf(id:number){
+    return this.http.delete<any>(this.deletePosturl+'/'+id)
   }
   
   

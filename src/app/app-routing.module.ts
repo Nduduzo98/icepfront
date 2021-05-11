@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { ViewapplicationComponent } from './viewapplication/viewapplication.component';
 const routes: Routes = [
+  { path: '',
+  redirectTo: '/home' ,
+  pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'apply', component: ApplyComponent},

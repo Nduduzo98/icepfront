@@ -19,7 +19,7 @@ export class ApplyComponent implements OnInit {
       lastname: [null,[Validators.required]],
       studentno:[null,[Validators.required,Validators.maxLength(9)]],
       specialization:[null,[Validators.required]],
-      cellNo:[null,[Validators.required,Validators.maxLength(10)]],
+      mobileno:[null,[Validators.required,Validators.maxLength(10)]],
       email:[null,[Validators.required,Validators.email,Validators.minLength(6)]],
       
     })

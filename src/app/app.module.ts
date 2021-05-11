@@ -13,6 +13,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
 
 import { AuthService } from './auth.service';
 import { ApplyComponent } from './apply/apply.component';
@@ -55,9 +59,14 @@ import { HomeComponent } from './home/home.component';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatIconModule
     
   ],
+  entryComponents:[ApplyComponent,ViewapplicationComponent,ViewprofileComponent,PostComponent],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })
